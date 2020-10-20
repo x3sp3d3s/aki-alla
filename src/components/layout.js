@@ -8,9 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import {Container} from 'react-bootstrap'
 import Header from "./header"
-import "./layout.css"
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,25 +24,15 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Container fluid>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div>
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <footer style={{position:'relative', bottom: '10px', paddingLeft: '15px', marginTop: '20px'}}>
+          © {new Date().getFullYear()}, Pizzeria Aki Alla
+        </footer> 
       </div>
-    </>
+    </Container>
   )
 }
 

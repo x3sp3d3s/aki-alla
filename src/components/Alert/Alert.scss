@@ -1,0 +1,15 @@
+.alert {
+	margin-top: 15px;
+	&__para {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 15px;
+		.alert__icon {
+			align-items: center;
+			margin-right: 15px;
+			width: 40px;
+			height: 40px;
+		}
+	}
+}
