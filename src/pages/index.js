@@ -12,34 +12,50 @@ import Ofer2 from '../images/ofertes/oferta2.png';
 import Ofer3 from '../images/ofertes/oferta3.jpg';
 
 import './index.scss';
-
-const IndexPage = () => (
-	<Container fluid>
-		<Layout>
-			<SEO title="Home" />
-			<Container fluid className="ofertes">
-				<Alerta />
-				<Row>
-					<Col align="center">
-						<h1>Ofertes</h1>
-					</Col>
-				</Row>
-				<Row>
-					<Col align="center" xs={12} md={4}>
-						<Image src={Ofer1} alt="Oferta1" className="oferta" fluid />
-					</Col>
-					<Col align="center" xs={12} md={4}>
-						<Image src={Ofer2} alt="Oferta1" className="oferta" fluid />
-					</Col>
-					<Col align="center" xs={12} md={4}>
-						<Container>
-							<Image src={Ofer3} alt="Oferta1" className="oferta" fluid />
-						</Container>
-					</Col>
-				</Row>
-			</Container>
-		</Layout>
-	</Container>
-);
+import { useStaticQuery, graphql } from 'gatsby';
+const IndexPage = () => {
+	// const result = useStaticQuery(graphql`
+	// 	query {
+	// 		allStrapiProducto {
+	// 			nodes {
+	// 				id
+	// 				Nombre
+	// 				Tipo
+	// 				Subtipo
+	// 			}
+	// 		}
+	// 	}
+	// `);
+	// console.log(result.allStrapiProducto.nodes);
+	// const data = result.allStrapiProducto.nodes;
+	return (
+		<Container fluid>
+			<Layout>
+				<SEO title="Home" />
+				<Container fluid className="ofertes">
+					<Alerta />
+					<Row>
+						<Col align="center">
+							<h1>Ofertes</h1>
+						</Col>
+					</Row>
+					<Row>
+						<Col align="center" xs={12} md={4}>
+							<Image src={Ofer1} alt="Oferta1" className="oferta" fluid />
+						</Col>
+						<Col align="center" xs={12} md={4}>
+							<Image src={Ofer2} alt="Oferta1" className="oferta" fluid />
+						</Col>
+						<Col align="center" xs={12} md={4}>
+							<Container>
+								<Image src={Ofer3} alt="Oferta1" className="oferta" fluid />
+							</Container>
+						</Col>
+					</Row>
+				</Container>
+			</Layout>
+		</Container>
+	);
+};
 
 export default IndexPage;

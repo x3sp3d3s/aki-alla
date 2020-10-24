@@ -22,7 +22,7 @@ const Header = ({ siteTitle }) => (
 			<Nav className="mr-auto">
 				<NavDropdown title="Pizzes" id="collasible-nav-dropdown">
 					<NavDropdown.Item>
-						<Link to="/pizza" className="link">
+						<Link to="/producto" className="link" state={{ tipo: 'Pizza', subtipo: 'normal' }}>
 							Normals
 						</Link>
 					</NavDropdown.Item>
@@ -47,7 +47,7 @@ const Header = ({ siteTitle }) => (
 
 				<Nav.Link href="#features">Kebbabs</Nav.Link>
 				<Nav.Link href="#pricing">Begudes</Nav.Link>
-				<Nav.Link href="#pricing">Gelats i Postres</Nav.Link>
+				<Nav.Link href="#pricing">Postres</Nav.Link>
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>

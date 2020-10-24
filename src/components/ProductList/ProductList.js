@@ -3,7 +3,8 @@ import { Card, Button, Row } from 'react-bootstrap';
 import './ProductList.scss';
 import Foto from '../../images/pizza-normal.jpg';
 
-export default function ProductList() {
+export default function ProductList(props) {
+	console.log(props);
 	return (
 		<Row>
 			<Card className="text-center">
